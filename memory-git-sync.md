@@ -12,9 +12,9 @@ metadata:
 **记忆仓库**: https://github.com/mayuwei0623-web/Claude.git (PRIVATE, branch main)
 **本机记忆目录(= 该仓库工作区)**: `C:\Users\<用户名>\.claude\projects\D--OverSeasGame-GameTestProject-WaterSort-Water\memory\`
 
-**关键约束**: 记忆目录名 `D--OverSeasGame-...` 是按工程绝对路径生成的。新电脑必须把工程 clone 到完全相同的绝对路径 `D:\OverSeasGame\GameTestProject\WaterSort\Water`,记忆目录名才对得上,我才能自动读到。
+**关键约束**: 记忆目录名是按**那台机器上工程的绝对路径**生成的(把 `:` `\` 换成 `-`,如 `D:\OverSeasGame\...\Water` → `D--OverSeasGame-...-Water`)。各机路径**可以不同**——记忆 .md 内容与路径无关,只要 clone 进"那台机器对应的目录名"即可。
 
-**新电脑恢复**: ①装 Claude Code + 登录一次(本体/凭证不随 git 走) ②工程 clone 到上述同一路径 ③`git clone <记忆仓库>` 到该机实际的 `.claude\projects\...\memory`。
+**新电脑恢复**: ①装 Claude Code + 登录一次(本体/凭证不随 git 走) ②工程 clone 到任意路径 ③先在该工程目录开一次 Claude Code,让它自动创建 `C:\Users\<用户名>\.claude\projects\<对应目录名>\`,查看实际生成的目录名 ④`git clone <记忆仓库>` 到那个目录的 `memory` 子目录。
 
 **日常维护(我不会自动 push)**: 更新过记忆后,在 memory 目录 `git add -A && git commit && git push`;换电脑开工前 `git pull`。我每次只改 .md 文件,提交推送需用户(或被显式要求时由我)执行。
 
